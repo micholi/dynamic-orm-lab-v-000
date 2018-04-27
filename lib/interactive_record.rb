@@ -61,9 +61,8 @@ class InteractiveRecord
 
     value.class == Fixnum ? value : "'#{value}'"
 
-     sql = "SELECT * FROM #{self.table_name} WHERE #{column} = '#{value}'"
-      DB[:conn].execute(sql)
-
+    sql = "SELECT * FROM #{self.table_name} WHERE #{column} = '#{value}'"
+    DB[:conn].execute(sql)
   end
 
 end
