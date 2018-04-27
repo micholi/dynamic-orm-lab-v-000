@@ -61,13 +61,9 @@ class InteractiveRecord
 
     dynami_value = value.is_a Integer ? value : "'#{value}'"
 
-    #attribute_hash.each do |k, v|
-    #  col_name = k
-    #  val_name = v
-
-    #  sql = "SELECT * FROM #{self.table_name} WHERE #{col_name} = '#{val_name}'"
+    # sql = "SELECT * FROM #{self.table_name} WHERE #{col_name} = '#{val_name}'"
     #  DB[:conn].execute(sql)
-    #end
+    
   end
 
 end
