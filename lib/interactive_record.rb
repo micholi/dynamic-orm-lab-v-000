@@ -58,13 +58,12 @@ class InteractiveRecord
   def self.find_by(attribute_hash)
 
     attribute_hash.each do |k, v|
+      col_name = k
+      val_name = v
 
-    col_name = k
-    val_name = v
-
-    sql = "SELECT * FROM #{self.table_name} WHERE #{col_name} = '#{val_name}'"
-    DB[:conn].execute(sql)
-  end
+      sql = "SELECT * FROM #{self.table_name} WHERE #{col_name} = '#{val_name}'"
+      DB[:conn].execute(sql)
+    end
   end
 
 end
