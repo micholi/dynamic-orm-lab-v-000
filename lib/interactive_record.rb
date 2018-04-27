@@ -32,7 +32,7 @@ class InteractiveRecord
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name_for_insert}")[0][0]
   end
 
-  def table_names_for_insert
+  def table_name_for_insert
     self.class.table_name
   end
 
@@ -44,7 +44,7 @@ class InteractiveRecord
     values.join(", ")
   end
 
-  def column_names_for_insert
+  def col_names_for_insert
     self.class.column_names.delete_if {|col| col == "id"}.join(", ")
   end
 
