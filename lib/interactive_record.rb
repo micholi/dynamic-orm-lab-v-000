@@ -49,7 +49,10 @@ class InteractiveRecord
   end
 
   def self.find_by(unknown_var)
-    sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
+    if unknown_var.is_a? Integer
+      sql = "SELECT * FROM #{self.table_name} WHERE id = '#{unknown_var}'"
+    else
+      sql = "SELECT * FROM #{self.table_name} WHERE unknown_var = '#{unknown_var}'"
     DB[:conn].execute(sql, unknown_var)
   end
 
