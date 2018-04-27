@@ -57,7 +57,7 @@ class InteractiveRecord
     if unknown_var.is_a? Integer
       sql = "SELECT * FROM #{self.table_name} WHERE id = '#{unknown_var}'"
     else
-      sql = "SELECT * FROM #{self.table_name} WHERE name = '#{unknown_var}'"
+      sql = "SELECT * FROM #{self.table_name} WHERE #{unknown_var} = '#{unknown_var}'"
     DB[:conn].execute(sql)
     end
   end
