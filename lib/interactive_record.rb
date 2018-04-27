@@ -56,7 +56,6 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute_hash)
-
     attribute_hash.each do |k, v|
       col_name = k
       val_name = v
