@@ -58,6 +58,7 @@ class InteractiveRecord
   def self.find_by(attribute)
     a = attribute.keys
     b = attribute.values
+    binding.pry
   #  if unknown_var.is_a? Integer
   #    sql = "SELECT * FROM #{self.table_name} WHERE id = '#{unknown_var}'"
   #  else
