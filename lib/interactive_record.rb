@@ -55,14 +55,19 @@ class InteractiveRecord
     DB[:conn].execute(sql)
   end
 
-  def self.find_by(attribute_hash)
-    attribute_hash.each do |k, v|
-      col_name = k
-      val_name = v
+  def self.find_by(attributes_hash)
+    column = attributes_hash.keys.first
+    value = attributes_hash.values.first
 
-      sql = "SELECT * FROM #{self.table_name} WHERE #{col_name} = '#{val_name}'"
-      DB[:conn].execute(sql)
-    end
+    dynami_value = value.is_a Integer ? value : "'#{value}'"
+
+    #attribute_hash.each do |k, v|
+    #  col_name = k
+    #  val_name = v
+
+    #  sql = "SELECT * FROM #{self.table_name} WHERE #{col_name} = '#{val_name}'"
+    #  DB[:conn].execute(sql)
+    #end
   end
 
 end
