@@ -59,7 +59,7 @@ class InteractiveRecord
     col_name = attribute.keys[0].to_s
     val_name = attribute.values[0]
 
-    sql = "SELECT * FROM #{self.table_name} WHERE #{col_name} = '#{val_name}'"
+    sql = "SELECT * FROM #{table_name} WHERE #{col_name} = '#{val_name}'"
     DB[:conn].execute(sql, val_name)
   end
 
