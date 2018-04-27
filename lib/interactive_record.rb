@@ -60,10 +60,10 @@ class InteractiveRecord
     attribute_hash.each do |k, v|
       col_name = k
       val_name = v
-
+end
       sql = "SELECT * FROM #{self.table_name} WHERE #{col_name} = '#{val_name}'"
       DB[:conn].execute(sql)
-    end
+    #end
   end
 
 end
