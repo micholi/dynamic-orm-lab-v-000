@@ -54,6 +54,7 @@ class InteractiveRecord
     else
       sql = "SELECT * FROM #{self.table_name} WHERE unknown_var = '#{unknown_var}'"
     DB[:conn].execute(sql, unknown_var)
+    end
   end
 
 end
